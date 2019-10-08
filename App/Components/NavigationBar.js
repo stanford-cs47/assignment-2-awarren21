@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Platform, SafeAreaView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform, SafeAreaView, Dimensions, Button } from 'react-native';
 import { Images, Profiles } from '../Themes';
 
 export class NavigationBar extends React.Component {

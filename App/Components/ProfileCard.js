@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     pictureStyle: {
         width: width * .9,
         height: width * .9,
-       aspectRatio: 1,
+        aspectRatio: 1,
         resizeMode: 'cover',
     },
     profileInfo: {
