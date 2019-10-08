@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform, SafeAreaView, Dimensions } from 'react-native';
 import { Images, Profiles } from './App/Themes';
+import { NavigationBar } from './App/Components/NavigationBar'
+import { ProfileCard } from './App/Components/ProfileCard'
+import { BottomBar } from './App/Components/BottomBar';
 
+const { width, height } = Dimensions.get('window')
 export default class App extends React.Component {
   constructor() {
     super();
-
     var haroldProfile = Profiles.harold;
     this.state = {
       profileImage: haroldProfile.image,
@@ -14,13 +17,13 @@ export default class App extends React.Component {
       occupation: haroldProfile.occupation
     };
   }
-
   render() {
     return (
-      <View style={styles.container}>
-        <Text>This is your workspace. Have fun!</Text>
-        <Text>(Hint: Peep the App folder)</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <NavigationBar navBar = {this.navBar}/>
+        <ProfileCard prof = {this.prof}/> 
+        <BottomBar buttons = {this.buttons}/>
+      </SafeAreaView>
     );
   }
 }
@@ -28,8 +31,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor:'#EEECEC',
   },
 });
